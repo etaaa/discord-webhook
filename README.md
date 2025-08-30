@@ -1,12 +1,12 @@
-# go-webhooks
+# discord-webhook
 
-An easy to use Golang package to quickly send Discord webhooks (https://discord.com/developers/docs/resources/webhook).
+An easy to use Golang package for sending [Discord webhooks](https://discord.com/developers/docs/resources/webhook).
 
 ## Usage
 
 Install:
 ```bash
-go get github.com/etaaa/go-webhooks
+go get github.com/etaaa/discord-webhook
 ```
 
 Usage:
@@ -15,24 +15,24 @@ package main
 
 import (
 	"log"
-	wh "github.com/etaaa/go-webhooks"
+	wh "github.com/etaaa/discord-webhook"
 )
 
 func main() {
 	// Create a new webhook object. Most fields are optional
 	webhook := wh.Webhook{
 		Content:   "This is the webhook's content - up to 2000 characters long.",
-		Username:  "go-webhooks",
+		Username:  "discord-webhook",
 		AvatarUrl: "https://golang.org/lib/godoc/images/footer-gopher.jpg",
 		Embeds: []wh.Embed{
 			{
 				Title:       "Embed Title with URL",
 				Description: "This is the embed's description",
-				Url:         "https://github.com/etaaa/go-webhooks",
+				Url:         "https://github.com/etaaa/discord-webhook",
 				Timestamp:   wh.GetTimestamp(),      // Returns a new timestamp matching Discords format
 				Color:       wh.GetColor("#00ff00"), // Returns the color in decimal value matching Discords format
 				Footer: wh.EmbedFooter{
-					Text: "Sent via github.com/etaaa/go-webhooks",
+					Text: "Sent via github.com/etaaa/discord-webhook",
 				},
 				Thumbnail: wh.EmbedThumbnail{
 					Url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Go_Logo_Blue.svg/1200px-Go_Logo_Blue.svg.png",
